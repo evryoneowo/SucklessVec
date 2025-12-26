@@ -37,7 +37,7 @@ void* _vec_push(void *v, void *element) {
         size_t new_cap = vec->cap * 2;
         vector *tmp = realloc(vec, sizeof(vector) + new_cap * vec->esz);
 
-        if (!tmp) return NULL;
+        if (!tmp) return v;
         
         vec = tmp;
         vec->cap = new_cap;
