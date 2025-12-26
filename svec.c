@@ -50,16 +50,6 @@ void* _vec_push(void *v, void *element) {
     return data;
 }
 
-void* vec_get(void *v, size_t index) {
-    vector *vec = VEC_HDR(v);
-
-    if (!vec || vec->len <= index) return NULL;
-
-    char *data = (char *)v;
-
-    return (char *)data + index * vec->esz;
-}
-
 void vec_pop(void *v) {
     vector *vec = VEC_HDR(v);
 
