@@ -1,0 +1,4 @@
+libsvec.a
+test.o
+test_vec
+svec.o
