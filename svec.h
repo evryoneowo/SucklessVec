@@ -13,6 +13,7 @@
 
 void* vec_init(size_t esz);
 void vec_free(void *v);
+void vec_pop(void *v);
 void vec_delete(void *v, size_t index);
 size_t vec_len(void *v);
 
