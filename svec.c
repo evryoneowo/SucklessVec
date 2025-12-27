@@ -23,6 +23,21 @@ void* vec_init(size_t esz) {
     return (char *)vec + sizeof(vector);
 }
 
+void* _vec_reserve(void *v, size_t n) {
+    vector *vec = VEC_HDR(v);
+
+    if (!vec) return v;
+
+    vector *tmp = realloc(vec, sizeof(vector) + n * vec->esz);
+
+    if (!tmp) return v;
+
+    vec = tmp;
+    vec->cap = n;
+
+    return (char *)vec + sizeof(vector);
+}
+
 void vec_free(void *v) {
     if (!v) return;
     free(VEC_HDR(v));
